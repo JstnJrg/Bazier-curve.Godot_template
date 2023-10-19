@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://test scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://icons/circle.png" type="Texture" id=2]
+[ext_resource path="res://icons/square.png" type="Texture" id=3]
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+colors = [ Color( 1, 1, 1, 1 ), Color( 0.247059, 0.592157, 0.745098, 1 ), Color( 0.654902, 0.533333, 0.109804, 1 ) ]
+textures = [ ExtResource( 2 ), ExtResource( 3 ) ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="edit point" type="Button" parent="HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 40.0
+text = "Edit point"
+
+[node name="Add point" type="Button" parent="HBoxContainer"]
+margin_left = 77.0
+margin_right = 151.0
+margin_bottom = 40.0
+text = "Add point"
+
+[node name="Generate point" type="Button" parent="HBoxContainer"]
+margin_left = 155.0
+margin_right = 265.0
+margin_bottom = 40.0
+text = "Generate curve"
+
+[node name="Remove point" type="Button" parent="HBoxContainer"]
+margin_left = 269.0
+margin_right = 370.0
+margin_bottom = 40.0
+text = "Remove point"
+
+[connection signal="updated_curve" from="." to="." method="_on_main_updated_curve"]
